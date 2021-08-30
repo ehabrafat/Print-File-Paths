@@ -1,7 +1,7 @@
-public static void print(List<String> path){
+    public static void print(List<String> paths){
         String[] lastPath = {"/"};
-        for(int i = 0; i< path.size(); i++){
-            String[] branches = path.get(i).split("/");
+        for(String path : paths){
+            String[] branches = path.split("/");
             int l = 0, b = 0;
             while (l < lastPath.length && b < branches.length){
                 if(lastPath[l].equals(branches[b])){
@@ -19,7 +19,7 @@ public static void print(List<String> path){
                     System.out.print(breaker);
                 }
                  else{
-                    System.out.print(" --> " + branches[b]);
+                   break;
                 }
                 ++l;
                 ++b;
